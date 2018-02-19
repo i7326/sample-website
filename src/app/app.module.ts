@@ -7,7 +7,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.route';
-import { HomeModule } from './pages/home/home.module'
+import { HomeModule } from './modules/home/home.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -22,7 +23,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormsModule,
     AppRoutingModule,
     HomeModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    SharedModule.forRoot(),
   ],
   providers: [{
       provide: PERFECT_SCROLLBAR_CONFIG,

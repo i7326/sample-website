@@ -1,0 +1,9 @@
+<div class="header" fxLayout="column" fxLayoutAlign="center end">
+  <div fxFlex="no-grow">
+    <div class="menu" fxLayout="column" fxLayoutAlign="space-between end" (click)="menuEvent($event)">
+      <div class="icon w-4/5" fxFlex="2px" [ngClass]="{'active': isMenuActive}"></div>
+      <div class="icon w-3/5" fxFlex="2px" [ngClass]="{'active': isMenuActive}"></div>
+      <div class="icon w-2/5" fxFlex="2px" [ngClass]="{'active': isMenuActive}"></div>
+    </div>
+  </div>
+</div>

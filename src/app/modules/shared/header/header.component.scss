@@ -1,0 +1,24 @@
+@import '~styles/variables';
+:host {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header {
+  padding: 15px;
+
+  .menu  {
+    width: 40px;
+    height: 20px;
+
+    .icon {
+      background: #3E4651;
+    }
+
+    .active {
+      background: $secondary;
+    }
+  }
+}

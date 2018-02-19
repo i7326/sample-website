@@ -1,0 +1,39 @@
+@import '~styles/variables';
+
+:host {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background: $secondary;
+  // transform: translateX(90%);
+}
+
+.nav {
+  height: 100%;
+
+  .menu {
+    padding: 70px 20px;
+    width: 100%;
+    height: 100%;
+    float: right;
+    background: $menu-background;
+    background-size: cover;
+
+    .item {
+      width: 230px;
+      min-width: 230px;
+      height: 230px;
+      background: $background;
+    }
+  }
+
+  .active {
+    width: 15%;
+    -moz-box-shadow:    inset 8px 0 10px -7px #000000;
+    -webkit-box-shadow: inset 8px 0 10px -7px #000000;
+    box-shadow:         inset 8px 0 10px -7px #000000;
+  }
+
+}

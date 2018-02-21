@@ -1,34 +1,14 @@
-<div class="nav">
-  <div class="menu" fxLayout="row wrap" fxLayoutAlign="stretch">
-  <div fxFlex="33.3333333" fxLayoutAlign="center center">
-    <div class="item bg-transparent shadow-md border-4 text-primary hover:bg-primary hover:text-secondary">
-      1
-    </div>
+<perfect-scrollbar class="nav">
+  <div class="menu" fxLayout="row" fxLayoutAlign="stretch" fxLayoutWrap>
+    <ng-container *ngFor="let q of menuItems">
+      <div fxFlex="grow" fxLayoutAlign="center center"><h1>{{q.name}}</h1></div>
+      <ng-container *ngFor="let i of q.child">
+        <div fxFlex.gt-md="33.3333333" fxLayoutAlign="center center">
+          <div class="item bg-transparent shadow-md border-4 text-primary hover:bg-primary hover:text-secondary">
+            {{i.name}}
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
-  <div fxFlex="33.3333333" fxLayoutAlign="center center">
-    <div class="item bg-transparent shadow-md border-4 text-primary hover:bg-primary hover:text-secondary">
-      2
-    </div>
-  </div>
-  <div fxFlex="33.3333333" fxLayoutAlign="center center">
-    <div class="item bg-transparent shadow-md border-4 text-primary hover:bg-primary hover:text-secondary">
-      3
-    </div>
-  </div>
-  <div fxFlex="33.3333333" fxLayoutAlign="center center">
-    <div class="item bg-transparent shadow-md border-4 text-primary hover:bg-primary hover:text-secondary">
-      4
-    </div>
-  </div>
-  <div fxFlex="33.3333333" fxLayoutAlign="center center">
-    <div class="item bg-transparent shadow-md border-4 text-primary hover:bg-primary hover:text-secondary">
-      5
-    </div>
-  </div>
-  <div fxFlex="33.3333333" fxLayoutAlign="center center">
-    <div class="item bg-transparent shadow-md border-4 text-primary hover:bg-primary hover:text-secondary">
-      6
-    </div>
-  </div>
-</div>
-</div>
+</perfect-scrollbar>

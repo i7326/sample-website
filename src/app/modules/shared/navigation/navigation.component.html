@@ -1,9 +1,9 @@
 <perfect-scrollbar class="nav">
   <div class="menu" fxLayout="row" fxLayoutAlign="stretch" fxLayoutWrap>
     <ng-container *ngFor="let q of menuItems">
-      <div fxFlex="grow" fxLayoutAlign="center center"><h1>{{q.name}}</h1></div>
+      <div fxFlex="grow" fxLayoutAlign="center center" class="p-6"><h1>{{q.name}}</h1></div>
       <ng-container *ngFor="let i of q.child">
-        <div fxFlex.gt-md="33.3333333" fxLayoutAlign="center center">
+        <div fxFlex.gt-md="33.3333333" fxLayoutAlign="center center" class="p-6">
           <div class="item bg-transparent shadow-md border-4 text-primary hover:bg-primary hover:text-secondary">
             {{i.name}}
           </div>

@@ -10,14 +10,21 @@
 
 .nav {
   height: 100%;
+  background: $menu-background;
+  background-size: cover;
 
   .menu {
-    padding: 70px 20px;
+    padding: 40px 20px;
     width: 100%;
-    min-height: 100vh;
     float: right;
-    background: $menu-background;
-    background-size: cover;
+
+    .header {
+      margin-top: 90px;
+    }
+
+    &:first-child .header {
+      margin-top: 30px;
+    }
 
     .item {
       width: 230px;

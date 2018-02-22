@@ -1,4 +1,5 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, ViewChild } from '@angular/core';
+import { PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
 
 @Component({
   selector: 'app-navigation',
@@ -6,6 +7,8 @@ import { Component, Output } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
+  @ViewChild(PerfectScrollbarComponent) componentScroll: PerfectScrollbarComponent;
+
   menuItems: any[] = [{
       name: 'Works',
       description: 'What we do',

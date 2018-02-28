@@ -1,5 +1,8 @@
-import { Component, Output, ViewChild } from '@angular/core';
-import { PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
+import { Component, Output, ViewChild, HostListener } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { PerfectScrollbarComponent, PerfectScrollbarDirective, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/takeUntil';
 
 @Component({
   selector: 'app-navigation',
@@ -7,7 +10,21 @@ import { PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfec
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
+  scrollObs: Observable<any>;
+  resizeObs: Observable<any>;
+  pos: number;
+  private ngUnsubscribe: Subject<void> = new Subject<void>();
+
   @ViewChild(PerfectScrollbarComponent) componentScroll: PerfectScrollbarComponent;
+
+  @HostListener('window:scroll', ['$event'])
+    onWindowScroll($event) {
+      console.log($event.target.documentElement.scrollTop)
+    }
+
+  public psConfig: PerfectScrollbarConfigInterface = {
+    minScrollbarLength: 500,
+  }
 
   menuItems: any[] = [{
       name: 'Works',
@@ -55,4 +72,26 @@ export class NavigationComponent {
       }]
   }];
 
+  constructor() {
+    // set initial value
+    // this.manageScrollPos();
+    //
+    // // create observable that we can subscribe to from component or directive
+    // this.scrollObs = Observable.fromEvent(window, 'scroll');
+    //
+    // // initiate subscription to update values
+    // this.scrollObs.takeUntil(this.ngUnsubscribe)
+    //               .subscribe(() => this.manageScrollPos());
+    //
+    // // create observable for changes in screen size
+    // this.resizeObs = Observable.fromEvent(window, 'resize');
+    //
+    // // initiate subscription to update values
+    // this.resizeObs.takeUntil(this.ngUnsubscribe)
+    //               .subscribe(() => this.manageScrollPos());
+  }
+
+test(e){
+// console.log(e);
+}
 }

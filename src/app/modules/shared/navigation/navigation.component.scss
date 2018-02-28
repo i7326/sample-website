@@ -20,10 +20,16 @@
 
     .header {
       margin-top: 90px;
+      font-family: $heading;
+      font-size: 2em;
+
+      span {
+        font-size: 2em;
+      }
     }
 
     &:first-child .header {
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .item {

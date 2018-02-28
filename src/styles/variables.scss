@@ -1,3 +1,4 @@
+@import "./typography.scss";
 
 // Color Pallete
 $primary : #048998;
@@ -8,6 +9,6 @@ $secondary: #E3E3E3;
 $menu-background: url('/assets/images/pattern.svg');
 
 //Fonts
-@import url('https://fonts.googleapis.com/css?family=Exo+2:400,500,600|Teko:500,700');
+$heading: 'DIN';
 $teko: 'Teko', sans-serif;
 $exo-2: 'Exo 2', sans-serif;
